@@ -1,12 +1,14 @@
 //arrays
 const array1 = [
     { name: 'Georg', email: 'georg@academlo.com' },
-    { name: 'Andrea', email: 'andrea@gmail.com' }
+    { name: 'Andrea', email: 'andrea@gmail.com' },
+    { name: 'Alan', email: 'alan@gmail.com' }
   ];
   
   const array2 = [
     { email: 'georg@academlo.com', attendance: true },
-    { email: 'andrea@gmail.com', attendance: false }
+    { email: 'andrea@gmail.com', attendance: false },
+    { attendance: false, email: 'alan@gmail.com' }
   ];
 
 //function 
@@ -33,4 +35,44 @@ function newArray(a1,a2)  {
     return array
 }
 
-    newArray(array1, array2)
+ //   newArray(array1, array2);
+
+const students = [
+  { name: 'Georg', email: 'georg@academlo.com', country_id: 1 },
+  { name: 'Andrea', email: 'andrea@gmail.com', country_id: 2 },
+  { name: 'Daniela', email: 'daniela@gmail.com', country_id: 2 },
+  { name: 'Mónica', email: 'monica@gmail.com', country_id: 2 }
+]
+
+const countries = [
+  { id: 1, name: 'Mexico', },
+  { id: 2, name: 'Colombia' }
+];
+
+const country = "Mexico";
+
+const getStudents = (arrStudents,arrCountries,getCountry) => {
+
+  const getCountryId = arrCountries.filter( country => country.name === getCountry );
+
+  const getStudents = arrStudents.filter( student => student.country_id === getCountryId[0].id );
+
+ return getStudents;
+
+};
+
+getStudents(students,countries,country);
+
+const studentsAge = [
+  { age: 23 },
+  { age: 25 },
+  { age: 30 },
+  { age: 32 },
+  { age: 25 },
+  { age: 22 },
+  { age: 25 },
+];
+
+const getAges = (array) =>{
+
+}

@@ -13,6 +13,9 @@ var array1 = [{
 }, {
   name: 'Andrea',
   email: 'andrea@gmail.com'
+}, {
+  name: 'Alan',
+  email: 'alan@gmail.com'
 }];
 var array2 = [{
   email: 'georg@academlo.com',
@@ -20,6 +23,9 @@ var array2 = [{
 }, {
   email: 'andrea@gmail.com',
   attendance: false
+}, {
+  attendance: false,
+  email: 'alan@gmail.com'
 }]; //function 
 
 function newArray(a1, a2) {
@@ -44,6 +50,60 @@ function newArray(a1, a2) {
 
   console.log(array);
   return array;
-}
+} //   newArray(array1, array2);
 
-newArray(array1, array2);
+
+var students = [{
+  name: 'Georg',
+  email: 'georg@academlo.com',
+  country_id: 1
+}, {
+  name: 'Andrea',
+  email: 'andrea@gmail.com',
+  country_id: 2
+}, {
+  name: 'Daniela',
+  email: 'daniela@gmail.com',
+  country_id: 2
+}, {
+  name: 'Mónica',
+  email: 'monica@gmail.com',
+  country_id: 2
+}];
+var countries = [{
+  id: 1,
+  name: 'Mexico'
+}, {
+  id: 2,
+  name: 'Colombia'
+}];
+var country = "Mexico";
+
+var getStudents = function getStudents(arrStudents, arrCountries, getCountry) {
+  var getCountryId = arrCountries.filter(function (country) {
+    return country.name === getCountry;
+  });
+  var getStudents = arrStudents.filter(function (student) {
+    return student.country_id === getCountryId[0].id;
+  });
+  return getStudents;
+};
+
+getStudents(students, countries, country);
+var studentsAge = [{
+  age: 23
+}, {
+  age: 25
+}, {
+  age: 30
+}, {
+  age: 32
+}, {
+  age: 25
+}, {
+  age: 22
+}, {
+  age: 25
+}];
+
+var getAges = function getAges(array) {};
